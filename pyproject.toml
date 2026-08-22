@@ -1,0 +1,10 @@
+[project]
+name = "ai-notetaker"
+version = "0.1.0"
+description = "A blank Python project for AI note-taking experiments."
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
