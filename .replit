@@ -3,6 +3,7 @@ modules = ["nodejs-24", "python-3.11"]
 [deployment]
 router = "application"
 deploymentTarget = "autoscale"
+run = "streamlit run --server.address 0.0.0.0 --server.port 5000 --server.headless true --server.enableCORS=false --server.enableWebsocketCompression=false app.py"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
@@ -31,6 +32,10 @@ outputType = "webview"
 task = "shell.exec"
 args = "streamlit run app.py --server.port=5000 --server.address=0.0.0.0 --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false --browser.gatherUsageStats=false"
 waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
 
 [agent]
 stack = "PNPM_WORKSPACE"
