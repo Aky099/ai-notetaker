@@ -1,20 +1,24 @@
 # ai-notetaker
 
-Blank Python project for building an AI note-taking application.
+Streamlit app that transcribes uploaded audio and summarizes it with Groq.
 
 ## Run & Operate
 
-- `python main.py` — run the empty Python entry point
+- `streamlit run app.py --server.port 5000` — run the Streamlit app
 
 ## Stack
 
 - Python 3.11+
-- No runtime dependencies
+- Streamlit
+- Groq
+- python-dotenv
 
 ## Where things live
 
-- `main.py` — application entry point
-- `pyproject.toml` — project metadata
+- `app.py` — Streamlit page and processing flow
+- `utils/transcribe.py` — Groq audio transcription
+- `utils/summarize.py` — Groq transcript summarization
+- `requirements.txt` — Python dependencies
 
 ## Architecture decisions
 
