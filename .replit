@@ -6,10 +6,6 @@ deploymentTarget = "autoscale"
 build = ["pip", "install", "-r", "requirements.txt"]
 run = "streamlit run app.py --server.port=5000 --server.address=0.0.0.0 --server.headless=true"
 
-[deployment.postBuild]
-args = ["pnpm", "store", "prune"]
-env = { "CI" = "true" }
-
 [workflows]
 runButton = "Project"
 
@@ -39,7 +35,7 @@ localPort = 5000
 externalPort = 80
 
 [agent]
-stack = "PNPM_WORKSPACE"
+stack = "PYTHON"
 expertMode = true
 
 [postMerge]
